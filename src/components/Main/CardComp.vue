@@ -28,7 +28,7 @@ export default {
 
 div {
     .card-body {
-        height: 120px;
+        height: 100px;
         background-color: $colororange ;
     }
 
