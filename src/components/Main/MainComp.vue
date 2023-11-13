@@ -1,7 +1,7 @@
 <template>
     <main>
         <div v-for="(card, index) in store.cards">
-            <CardComp :image="store.cards.card_images.image_url" />
+            <CardComp :image="card.card_images[0].image_url" />
         </div>
     </main>
 </template>
