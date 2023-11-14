@@ -41,6 +41,7 @@ export default {
                 this.filteredCards = [this.store.cards];
             } else {
                 this.filteredCard = this.store.cards.filter(card => card.archetype === selectedArchetype);
+                console.log(this.filteredCard)
             }
         }
     }

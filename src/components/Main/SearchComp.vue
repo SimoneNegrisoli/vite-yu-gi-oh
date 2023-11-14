@@ -12,12 +12,23 @@ export default {
     data() {
         return {
             selectedArchetype: '',
-            archetypes: ['Alien', 'Noble Knight', 'Melodious', 'Archfiend', 'A.I.', 'ABC']
+            archetypes: []
         }
+    },
+    mounted() {
+        axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+            .then((response) => {
+                this.archetypes = response.data.data.map(item => item.archetype_name);
+            })
+            .catch(error => {
+                console.error('Errore :', error);
+            })
+
     },
     methods: {
         emitArch() {
             this.$emit('archSelected', this.selectedArchetype)
+            console.log(this.selectedArchetype)
         }
     }
 }
