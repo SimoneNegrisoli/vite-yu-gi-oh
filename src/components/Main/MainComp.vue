@@ -6,7 +6,7 @@
                     <SearchComp />
                 </div>
             </div>
-            <div class="row">
+            <div class="row my-row-card">
                 <div class="col-12" v-if="(store.cards.length < 20)">
                     loading
                 </div>
@@ -46,9 +46,13 @@ main {
 }
 
 .row {
+    justify-content: center;
+}
+
+.my-row-card {
+    border: 1px solid black;
     background-color: white;
     padding-top: 60px;
-    justify-content: center;
-    border: 1px solid black;
+
 }
 </style>
