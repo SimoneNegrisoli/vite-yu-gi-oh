@@ -44,6 +44,9 @@ export default {
                 console.log(this.filteredCard)
             }
         }
+    },
+    created() {
+        this.getArch()
     }
 }
 </script>
