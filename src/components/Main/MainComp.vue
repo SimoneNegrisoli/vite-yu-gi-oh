@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <SearchComp />
+                    <SearchComp @archSelected="getArch" />
                 </div>
             </div>
             <div class="row my-row-card">
@@ -32,6 +32,16 @@ export default {
     data() {
         return {
             store,
+            filteredCard: []
+        }
+    },
+    methods: {
+        getArch(selectedArchetype) {
+            if (selectedArchetype === 'Select type') {
+                this.filteredCards = [this.store.cards];
+            } else {
+                this.filteredCard = this.store.cards.filter(card => card.archetype === selectedArchetype);
+            }
         }
     }
 }

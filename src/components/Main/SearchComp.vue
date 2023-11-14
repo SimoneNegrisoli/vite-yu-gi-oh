@@ -1,15 +1,25 @@
 <template>
-    <select class="form-select">
-        <option selected>Select type</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+    <select class="form-select" v-model="selectedArchetype" @change="emitArch">
+        <option value="" selected>Select type</option>
+        <option v-for="arch in archetypes" :key="arch" :value="arch">{{ arch }}</option>
+
     </select>
 </template>
 
 <script>
 export default {
-    name: 'SearchComp'
+    name: 'SearchComp',
+    data() {
+        return {
+            selectedArchetype: '',
+            archetypes: ['Alien', 'Noble Knight', 'Melodious', 'Archfiend', 'A.I.', 'ABC']
+        }
+    },
+    methods: {
+        emitArch() {
+            this.$emit('archSelected', this.selectedArchetype)
+        }
+    }
 }
 </script>
 
