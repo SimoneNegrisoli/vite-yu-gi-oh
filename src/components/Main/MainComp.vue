@@ -2,6 +2,11 @@
     <main>
         <div class="container">
             <div class="row">
+                <div class="col-12">
+                    <SearchComp />
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-12" v-if="(store.cards.length < 20)">
                     loading
                 </div>
@@ -15,12 +20,14 @@
 </template>
 
 <script>
+import SearchComp from './SearchComp.vue'
 import { store } from '../../data/store.js';
 import CardComp from './CardComp.vue';
 export default {
     name: 'MainComp',
     components: {
-        CardComp
+        CardComp,
+        SearchComp
     },
     data() {
         return {
